@@ -1,0 +1,24 @@
+@media only screen and (max-width: 500px) {
+  /* Para Celulares: */
+  .card .card-statistic-5 .banner-img img {
+    max-width: 20% !important;
+    margin-bottom: 19px !important;
+  }
+
+  .imagen-login {
+    display: none !important;
+  }
+
+  .margenes-login {
+    padding-right: 5% !important;
+    padding-left: 5% !important;
+  }
+
+  .texto-login {
+    color: #0091a0 !important;
+  }
+
+  .posicion-venta {
+    position: relative !important;
+  }
+}

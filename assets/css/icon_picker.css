@@ -1,0 +1,44 @@
+.material-icon-picker {
+  z-index: 99;
+  position: absolute !important;
+  background: #fcfcfc !important;
+  text-align: center !important;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3) !important;
+  padding: 15px !important;
+  top: 85% !important;
+}
+
+.material-icon-picker:focus {
+  outline: none !important;
+}
+
+.material-icon-picker-prefix {
+  align-self: center !important;
+  margin-right: 2% !important;
+  top: 0.5rem !important;
+}
+
+.material-icon-picker .icons {
+  max-width: 300px !important;
+  max-height: 200px !important;
+  overflow: scroll !important;
+  overflow-x: hidden !important;
+}
+
+div.material-icon-picker input[type="text"] {
+  width: 100% !important;
+}
+
+.material-icon-picker .material-icons {
+  font-size: 30px !important;
+  cursor: pointer !important;
+  border-radius: 50% !important;
+  padding: 10px !important;
+  margin: 3px !important;
+  transition: 0.2s !important;
+}
+
+.material-icon-picker .material-icons:hover {
+  background: #ececec !important;
+}
