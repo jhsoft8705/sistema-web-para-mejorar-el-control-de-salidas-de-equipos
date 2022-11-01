@@ -1,53 +1,40 @@
 @extends('index')
 
 @section('template_title')
-       Create Site
+    Create Site
 @endsection
-@section('contenedorsiderbar')
-    <h1 class="lead" style="font-size: 24px" ><b>
-        Registrar estaciones - sites</b></h1>
 
-@endsection
 @section('content')
-           {{-- card register--}}
-    <div class="card  mb-4">
-        <div class="card-header m-0">
-        <p _ngcontent-serverapp-c93="" class="lead">Completar todos los datos requeridos</p>
-            </div>
-            <div class="card-body me-lg-auto container-sm">
-             <blockquote class="blockquote mb-0">
-              {{-- formuario --}}
-             <div class="container  " id="advanced-search-form">
-             <form  action="{{route('sites.store')}}" method="POST">
-                @csrf {{-- token --}}
-                @include('site.form')
+    <section class="content container-fluid">
+        <div class="row">
+            <div class="col-md-12">
 
-                {{-- botones --}}
-                <div class="row">
-                    <div class="col">
-                        <div class="form-fluid">
-                            {{ Form::label(' ') }}
-                            <button class=" califa form-control" aria-current="page" id="advanced-search-form" type="submit"><i class="bi bi-file-earmark-plus-fill"></i>Registrar</button>
-                         </div>
+                @includeif('partials.errors')
 
+                <div class="card card-default">
+                    <div class="card-header">
+                        <span class="card-title">Create Site</span>
                     </div>
-                    <div class="col">
-                        <div class="form-fluid">
-                            {{ Form::label(' ') }}
-                             <a href="{{route('sites.index')}}" class=" califa form-control" aria-current="page" id="advanced-search-form"><i class="bi bi-x-lg"></i>Cancelar </a>
-                        </div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('sites.store') }}"  role="form" enctype="multipart/form-data">
+                            @csrf
+
+                            @include('site.form')
+                            <div class="col-md-6">
+                                <br>
+                                <button id="btnActionForm" type="submit" class="btn btn-primary"><i class="fa fa-check-circle"></i> <span id="btnText">Guardar</span></button>
+                                <a class="btn btn-danger" href="{{route('sites.index')}}"><i class="fa fa-times-circle"></i> Cancelar</a>
+                             </div>
+                            {{-- comment
+                            <div class="modal-footer">
+                                <button  type="submit" class="btn btn-primary"><i class="fa fa-check-circle"></i> <span id="btnText">Guardar</span></button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times-circle"></i> Cancelar</button>
+                            </div>--}}
+                        </form>
                     </div>
                 </div>
-            {{-- botones --}}
-             </form>
-          </div>
-        {{-- end form --}}
-         </blockquote>
+            </div>
         </div>
-    </div>
-     {{-- end card register --}}
-
-
-
-
+    </section>
 @endsection
+

@@ -20,9 +20,16 @@
                             @csrf
 
                             @include('equipo.form')
-                            <div class="box-footer mt20">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
+                            <div class="col-md-6">
+                                <br>
+                                <button id="btnActionForm" type="submit" class="btn btn-primary"><i class="fa fa-check-circle"></i> <span id="btnText">Guardar</span></button>
+                                <a class="btn btn-danger" href="{{route('equipos.index')}}"><i class="fa fa-times-circle"></i> Cancelar</a>
+                             </div>
+                            {{-- comment
+                            <div class="modal-footer">
+                                <button  type="submit" class="btn btn-primary"><i class="fa fa-check-circle"></i> <span id="btnText">Guardar</span></button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times-circle"></i> Cancelar</button>
+                            </div>--}}
                         </form>
                     </div>
                 </div>

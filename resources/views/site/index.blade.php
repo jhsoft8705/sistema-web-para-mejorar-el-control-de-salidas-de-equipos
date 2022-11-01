@@ -23,8 +23,8 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="#" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{-- comment {{ __('Salidad de equipos') }}--}}
+                                <a href="{{route('equipos.index')}}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                               __(Almacen)_
                                 </a>
                               </div>
                         </div>
@@ -71,7 +71,7 @@
                                                 {{-- botones --}}
                                                     {{-- boton editar --}}
                                                      <a href="Update" data-bs-toggle="modal" data-bs-target="#mimodal{{$site->id}}"
-                                                        class="text-danger" data-bs-toggle="tooltip"
+                                                        class="text-success" data-bs-toggle="tooltip"
                                                        title="Editar">
                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
@@ -116,7 +116,7 @@
                                                   {{-- end boton editar --}}
                                                      {{-- boton ver mas --}}
                                                      <a href="vermas" data-bs-toggle="modal" data-bs-target="#vermas{{$site->id}}"
-                                                        class="text-danger" data-bs-toggle="tooltip"
+                                                        class="text-info" data-bs-toggle="tooltip"
                                                        title="vermas">
                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
                                                         <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>

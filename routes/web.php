@@ -18,5 +18,6 @@ Route::get('/', function () {
 });
 Route::resource('sites','App\Http\Controllers\SiteController')->names('sites');
 Route::resource('equipos','App\Http\Controllers\EquipoController')->names('equipos');
+Route::resource('bajas','App\Http\Controllers\EquipofueraController')->names('bajas');
 
 

@@ -19,11 +19,13 @@ class EquipoController extends Controller
      */
     public function index()
     {
-        $equipos = Equipo::paginate(4);
+        $equipos = Equipo::paginate(5);
         $lista_sites=Site::pluck('nombre');
+        $sites=Site::all();//agregue recien
 
 
-        return view('equipo.index', compact('equipos','lista_sites'));
+
+        return view('equipo.index', compact('equipos','lista_sites','sites'));
            // ->with('i', (request()->input('page', 1) - 1) * $equipos->perPage());
     }
 
@@ -34,9 +36,10 @@ class EquipoController extends Controller
      */
     public function create()
     {
-        $lista_sites=Site::pluck('nombre');
+        $sites=Site::all();//agregue recien
+       // $lista_sites=Site::pluck('nombre');
         $equipo = new Equipo();
-        return view('equipo.create', compact('equipo','lista_sites'));
+        return view('equipo.create')->with(compact('equipo','sites'));
 
     }
 
@@ -95,8 +98,14 @@ class EquipoController extends Controller
 
         $equipo->update($request->all());
 
+        if($equipo->estado==1)
         return redirect()->route('equipos.index')
             ->with('success', 'Equipo updated successfully');
+            else
+            return redirect()->route('bajas.index')
+            ->with('success', 'Equipo updated successfully'); 
+
+
     }
 
     /**

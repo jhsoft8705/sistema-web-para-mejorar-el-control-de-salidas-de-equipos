@@ -14,13 +14,33 @@
     {{-- datatables --}}
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
      {{-- end datatables --}}
-
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
 </head>
   <body>
+
+    <style>
+
+        .b {
+            background: #03018a;
+            text-align:center;
+            font: 15px/1.5 Arial, Helvetica,sans-serif;
+        }
+        .b a {
+            color: white;
+            text-decoration:none;
+        }
+        .activo  {
+        background: #99c356;
+                 }
+        .activo a {
+        color:blue;
+        }
+
+        </style>
+
     <div class="container-fluid overflow-hidden">
         <div class="row vh-100 overflow-auto pp">
             <div class="col-sm-12 col-md-12 flex-grow-0 flex-md-grow-0 flex-lg-grow-0 flex-sm-grow-0 col-md-3 col-12   col-sm-3 col-xl-2 px-sm-2 px-0  d-flex sticky-top" style="background: #24385B">
@@ -35,17 +55,21 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('equipos.index')}}" class="nav-link px-sm-0 px-2 ">
+                            <a href="{{route('equipos.index')}}" class="{{setActivo('equipos.index')}} nav-link px-sm-0 px-2 ">
                                 <i class="fs-5 bi-grid"></i><span class="ms-1 d-none d-sm-inline">Equipos</span></a>
                         </li>
                         <li>
-                            <a href="{{route('sites.index')}}" class="nav-link px-sm-0 px-2">
+                            <a href="{{route('sites.index')}}" class="{{setActivo('sites.index')}}nav-link px-sm-0 px-2">
                                 <i class="fs-5 bi-link"></i><span class="ms-1 d-none d-sm-inline">Estaciones</span> </a>
                         </li>
                         <li>
                             <a href="#" class="nav-link px-sm-0 px-2">
                                 <i class="fs-5 bi-people"></i><span class="ms-1 d-none d-sm-inline">Usuarios</span> </a>
                         </li>
+                        {{-- comment
+                        <div class="col-12 col-lg p-3 border b {{setActivo('equipos.index')}}"><a href="{{route('equipos.index')}}">Equipos</a></div>
+ --}}
+
                     </ul>
                     <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
