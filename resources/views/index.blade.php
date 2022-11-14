@@ -21,49 +21,29 @@
 </head>
   <body>
 
-    <style>
-
-        .b {
-            background: #03018a;
-            text-align:center;
-            font: 15px/1.5 Arial, Helvetica,sans-serif;
-        }
-        .b a {
-            color: white;
-            text-decoration:none;
-        }
-        .activo  {
-        background: #99c356;
-                 }
-        .activo a {
-        color:blue;
-        }
-
-        </style>
-
     <div class="container-fluid overflow-hidden">
         <div class="row vh-100 overflow-auto pp">
             <div class="col-sm-12 col-md-12 flex-grow-0 flex-md-grow-0 flex-lg-grow-0 flex-sm-grow-0 col-md-3 col-12   col-sm-3 col-xl-2 px-sm-2 px-0  d-flex sticky-top" style="background: #24385B">
                 <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
-                    <a href="#" class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <span class="fs-5 ">SISTEMA<span class="d-none d-sm-inline"> JH-S</span></span>
+                    <a href="#" class=" d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 ">Gestión<span class="colorlogo  d-none d-sm-inline">Systems</span></span>
                     </a>
                     <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
                         <li class="nav-item">
                             <a href="#" class="nav-link px-sm-0 px-2">
-                                <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Bienvenida</span>
+                                <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="{{route('equipos.index')}}" class="{{setActivo('equipos.index')}} nav-link px-sm-0 px-2 ">
+                        <li class="{{setActivo('equipos.index')}}{{setActivo('bajas.index') }}{{setActivo('equipos.create') }}">
+                            <a href="{{route('equipos.index')}}" class="nav-link px-sm-0 px-2 " title="Seleccionar equipos">
                                 <i class="fs-5 bi-grid"></i><span class="ms-1 d-none d-sm-inline">Equipos</span></a>
                         </li>
-                        <li>
-                            <a href="{{route('sites.index')}}" class="{{setActivo('sites.index')}}nav-link px-sm-0 px-2">
+                        <li class="{{setActivo('sites.index')}}{{setActivo('sites.create')}}">
+                            <a href="{{route('sites.index')}}" class="nav-link px-sm-0 px-2" title="Seleccionar estaciones">
                                 <i class="fs-5 bi-link"></i><span class="ms-1 d-none d-sm-inline">Estaciones</span> </a>
                         </li>
-                        <li>
-                            <a href="#" class="nav-link px-sm-0 px-2">
+                        <li class="{{setActivo('users.index')}} {{setActivo('users.create')}}">
+                            <a href="{{route('users.index')}}" class="nav-link px-sm-0 px-2" title="Seleccionar usuarios">
                                 <i class="fs-5 bi-people"></i><span class="ms-1 d-none d-sm-inline">Usuarios</span> </a>
                         </li>
                         {{-- comment
@@ -91,6 +71,7 @@
                 </div>
             </div>
             {{-- botones --}}
+            @include('sweetalert::alert')
             <div class="col d-flex flex-column h-sm-100 ">
                 <main class="row overflow-auto ">
                     <div class="  col pt-4">{{-- list-group-item-success --}}
@@ -101,7 +82,7 @@
                        </div>
                 </main>
                 <footer class="row bg-light py-4 mt-auto">
-                    <div class="col">©copyright Jh soft-Perú</div>
+                    <div class="col ">©copyright Jh soft-Perú</div>
                 </footer>
             </div>
             {{-- end botones --}}

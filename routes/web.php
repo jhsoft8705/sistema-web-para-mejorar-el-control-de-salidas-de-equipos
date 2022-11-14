@@ -19,5 +19,11 @@ Route::get('/', function () {
 Route::resource('sites','App\Http\Controllers\SiteController')->names('sites');
 Route::resource('equipos','App\Http\Controllers\EquipoController')->names('equipos');
 Route::resource('bajas','App\Http\Controllers\EquipofueraController')->names('bajas');
+Route::resource('usuarios','App\Http\Controllers\UserController')->names('users');
+Route::resource('salidas','App\Http\Controllers\SalidaController')->names('salidas');
+Route::resource('consignados','App\Http\Controllers\ConsignadoController')->names('consignados');
+Route::resource('entradas','App\Http\Controllers\EntradaController')->names('entradas');
+
+
 
 

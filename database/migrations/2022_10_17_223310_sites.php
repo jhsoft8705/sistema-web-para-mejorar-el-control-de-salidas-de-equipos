@@ -25,6 +25,19 @@ class Sites extends Migration
             $table->string('estado');
             $table->timestamps();
         });
+        DB::connection('mysql')->table('sites')->insert([
+            [
+                'id' =>1,
+                 'nombre' => 'Minas',
+                'codigo' => 'TC-4520',
+                'direccion' => 'Cajamarca-peru',
+                'region' => 'Cajamarca',
+                'oym' => 'Oym Cajamarca',
+                'estado' => 'Activo',
+                'created_at' => date('Y-m-d H:m:s'),
+                'updated_at' => date('Y-m-d H:m:s'),
+            ],
+        ]);
     }
 
     /**

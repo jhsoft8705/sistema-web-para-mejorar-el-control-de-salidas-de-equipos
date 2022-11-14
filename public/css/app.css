@@ -618,3 +618,19 @@ table.dataTable td.dt-control{text-align:center;cursor:pointer}table.dataTable t
     background: #0A58CA;
     color: #fff;
 }
+/*efecto nav bar*/
+.activo a {
+    color:#FFCA2C;
+    }
+.colorlogo
+{
+    color: #FFCA2C;
+}
+
+.boton 
+{
+    color: #24385B;
+    background-color: #0A58CA;
+    background: yellow;
+    text-align:justify;
+}

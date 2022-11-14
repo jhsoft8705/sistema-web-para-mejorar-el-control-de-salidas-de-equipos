@@ -4,12 +4,11 @@
         <label class="form-control-label" for=" ">Procedencia</label>
         <select type="select" id="sitio_id" name="sitio_id"  class="form-control form-select" value="{{old('sitio_id',$equipo->sitio_id)}}">
             <option value="" disabled>--Seleccionar--</option>
-             @foreach ($sites as $site) 
+             @foreach ($sites as $site)
             <option    value="{{$site->id}}">{{$site->nombre}}</option>
             {!! $errors->first('sitio_id', '<div class="invalid-feedback">:message</div>') !!}
             @endforeach
          </select>
-
      </div>
 
     <div class="col-md-6">
@@ -17,7 +16,7 @@
             <label for="alias" class="form-control-label">Denominación</label>
             {{ Form::text('alias', $equipo->alias, ['class' => 'form-control' . ($errors->has('alias') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
             {!! $errors->first('alias', '<div class="invalid-feedback">:message</div>') !!}
- </div>
+        </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">

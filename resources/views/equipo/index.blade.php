@@ -25,6 +25,9 @@
                                 <a href="{{route('bajas.index')}}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Salidad de equipos') }}
                                 </a>
+                                <a href="{{route('salidas.index')}}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                    {{ __('Salida reales') }}
+                                  </a>
                               </div>
                         </div>
                     </div>

@@ -18,7 +18,6 @@ class Equipos extends Migration
             $table->engine="InnoDB";
             $table->id();
             $table->foreignId('sitio_id')->references('id')->on('sites');
-
             //$table->integer('site_id')->unsigned();
             $table->string('codigo');
             $table->string('alias');
@@ -32,6 +31,22 @@ class Equipos extends Migration
 
             //$table->foreign('site_id')->references('id_site')->on('sites')->nullable();
         });
+        DB::connection('mysql')->table('equipos')->insert([
+            [
+                'id' =>1,
+                'sitio_id' => 1,
+                'codigo' => '102502',
+                'alias' => 'RTN',
+                'descripcion' => 'equipo-RTNA',
+                'serie' => 'SN:4528',
+                'condicion' => 'Operativo',
+                'unidad_medida' => 'unidad',
+                'cantidad' => 2,
+                'estado' => 'Activo',
+                'created_at' => date('Y-m-d H:m:s'),
+                'updated_at' => date('Y-m-d H:m:s'),
+            ],
+        ]);
     }
 
     /**
