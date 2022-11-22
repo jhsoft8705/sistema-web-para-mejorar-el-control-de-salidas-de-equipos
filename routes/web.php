@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/','App\Http\Controllers\SessionController')->names('rutalogin')->middleware('guest');
 Route::resource('/home','App\Http\Controllers\HomeController')->names('homes')->middleware('auth');
 Route::resource('sites','App\Http\Controllers\SiteController')->names('sites')->middleware('auth');
+
+
 Route::resource('equipos','App\Http\Controllers\EquipoController')->names('equipos')->middleware('auth');
 Route::resource('baja','App\Http\Controllers\EquipoFueraController')->names('bajas')->middleware('auth');
 
@@ -26,4 +28,5 @@ Route::resource('consignados','App\Http\Controllers\ConsignadoController')->name
 Route::resource('entradas','App\Http\Controllers\EntradaController')->names('entradas')->middleware('auth');
 
 Route::get('/close','App\Http\Controllers\SessionController@destroy')->name('close.destroy')->middleware('auth');
-
+//PDF
+Route::get('/exportar','App\Http\Controllers\SiteController@export')->name('sites.excel');

@@ -39,7 +39,7 @@
     <div class="col-md-6">
         <label class="form-control-label" for="estado">Estado</label>
         <select class="form-control form-select" id="estado" name="estado" >
-            <option value="0">Seleccionar</option>
+            <option value="0" selected disabled>Seleccionar</option>
             <option value="1">Activo</option>
             <option value="2">Inactivo</option>
         </select>

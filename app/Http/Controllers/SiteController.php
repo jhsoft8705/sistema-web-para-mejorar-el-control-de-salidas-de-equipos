@@ -5,6 +5,11 @@ use App\Models\Site;
 use Illuminate\Http\Request;
 use Illuminate\support\Facades\Session; //aqui importamos mensajes
 use Illuminate\support\Facades\DB; //aqui importamos mensajeszz
+//exportacion excel
+use App\Exports\SiteExport;
+use Maatwebsite\Excel\Facades\Excel;
+
+//end expotacion excel
 
 /**
  * Class SiteController
@@ -12,11 +17,13 @@ use Illuminate\support\Facades\DB; //aqui importamos mensajeszz
  */
 class SiteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+     //exportacion excel
+     public function export(){
+        return Excel::download(new SiteExport, 'ReporteSites.xlsx');
+    }
+    //end exportcion excel
+
     public function index()
     {
         $sites = Site::paginate();
@@ -24,6 +31,7 @@ class SiteController extends Controller
         return view('site.index', compact('sites',$sites));
            // ->with('i', (request()->input('page', 1) - 1) * $sites->perPage());
     }
+
 
     /**
      * Show the form for creating a new resource.

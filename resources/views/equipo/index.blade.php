@@ -6,8 +6,9 @@
 @section('contenedorsiderbar')
 <div class="btn-group m-0 " data-toggle="buttons">
     <a href="{{ route('equipos.create')}}" class="btn btn-secondary mr-2 "><i class="bi bi-folder-plus"></i> Agregar Entrada</a>
-     <a href="#" class="btn btn-warning"><i class="bi bi-file-earmark-spreadsheet"></i> Imprimir reportes</a>
- </div>
+{{--      <a href="#" class="btn btn-warning"><i class="bi bi-file-earmark-spreadsheet"></i> Imprimir reportes</a>
+ --}}
+</div>
 @endsection
 @section('content')
     <div class="container-fluid">
@@ -36,7 +37,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table  id="example"  class="display table table-striped table-hover">
+                            <table  id="example" class="example display table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
 										<th>Pertenencia</th>
@@ -47,15 +48,13 @@
                                          <th>Medición</th>
 										<th>Cantidad</th>
 										<th>Estado</th>
-
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($equipos as $equipo)
+                                    @if($equipo->estado==1)
                                         <tr>
-                                            @if($equipo->estado==1)
-
 											<td>Site-{{ $equipo->site->nombre }}</td>
                                             <td>{{ $equipo->alias }}</td>
                                             <td>{{ $equipo->codigo }}</td>
@@ -72,7 +71,8 @@
                                              <td>
                                               @if($equipo->estado==1)
                                              <span class="badge text-bg-primary">En almacen</span>
-                                             @elseif($equipo->estado==2) <span class="badge text-bg-danger">Fuera de almacen</span>
+                                             @else
+                                             <span class="badge text-bg-danger">Fuera de almacen</span>
                                              @endif
                                              </td>
                                             <td>
@@ -250,7 +250,7 @@
                                             </td>
                                         </tr>
                                         @endif
-                                    @endforeach
+                                   @endforeach
                                 </tbody>
                             </table>
                         </div>

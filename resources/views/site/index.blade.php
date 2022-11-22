@@ -6,7 +6,7 @@
 @section('contenedorsiderbar')
 <div class="btn-group m-0 " data-toggle="buttons">
    <a href="{{ route('sites.create')}}" class="btn btn-secondary mr-2 "><i class="bi bi-folder-plus"></i> Agregar site</a>
-     <a href="#" class="btn btn-warning"><i class="bi bi-file-earmark-spreadsheet"></i> Imprimir reportes</a>
+     <a href="{{ route('sites.excel') }}" class="btn btn-warning"><i class="bi bi-file-earmark-spreadsheet"></i> Imprimir PDF</a>
 
  </div>
 @endsection
@@ -24,7 +24,7 @@
 
                              <div class="float-right">
                                 <a href="{{route('equipos.index')}}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                               __(Almacen)_
+                               _(Almacen)
                                 </a>
                               </div>
                         </div>
@@ -59,12 +59,11 @@
                                              <td>{{$site->region}}</td>
                                             <td>{{$site->oym}}</td>
                                             <td class="text-center">
-                                                @if($site->estado == 1)
-                                                    <div class="califa badge-success">Activo</div>
-                                                @elseif($site->estado == 2)
-                                                    <div class="califa badge-danger">Inactivo</div>
-                                                    @elseif($site->estado == 0)
-                                                    <div class="califa badge-danger">Sin estado</div>
+                                                @if($site->estado==1)
+                                                <span class="badge text-bg-primary">Activo</span>
+                                                @else
+                                                    <div class="badge text-bg-danger">Inactivo</div>
+
                                                 @endif
                                             </td>
                                             <td>
@@ -251,6 +250,7 @@
 
                                             </td>
                                         </tr>
+
                                     @endforeach
                                 </tbody>
                             </table>
