@@ -71,6 +71,15 @@
                     </div>
                 </div>
                  {{-- links aqui --}}
+
+
+<button id="#agregar" name="agregar" onclick="agregar">agregar</button>
+<script>
+    function agregar(){
+
+    console.log('funciona')
+    }
+</script>
             </div>
         </div>
     </div>

@@ -41,12 +41,13 @@ class Equipos extends Migration
                 'serie' => 'SN:4528',
                 'condicion' => 'Operativo',
                 'unidad_medida' => 'unidad',
-                'cantidad' => 2,
-                'estado' => 'Activo',
+                'cantidad' => 1,
+                'estado' => 1,
                 'created_at' => date('Y-m-d H:m:s'),
                 'updated_at' => date('Y-m-d H:m:s'),
             ],
         ]);
+        
     }
 
     /**

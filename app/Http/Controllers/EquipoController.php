@@ -103,7 +103,7 @@ class EquipoController extends Controller
             ->with('success', 'Equipo updated successfully');
             else
             return redirect()->route('bajas.index')
-            ->with('success', 'Equipo updated successfully'); 
+            ->with('success', 'Equipo updated successfully');
 
 
     }

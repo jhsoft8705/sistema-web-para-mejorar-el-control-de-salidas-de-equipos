@@ -3,24 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
-/**
- * Class Site
- *
- * @property $id
- * @property $nombre
- * @property $codigo
- * @property $region
- * @property $direccion
- * @property $oym
- * @property $estado
- * @property $created_at
- * @property $updated_at
- *
- * @property Equipo[] $equipos
- * @package App
- * @mixin \Illuminate\Database\Eloquent\Builder
- */
+ 
 class Site extends Model
 {
 

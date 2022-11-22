@@ -15,11 +15,7 @@ class Entradas extends Migration
     {
         Schema::create('entradas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->nullable();
             $table->foreignId('user_id')->references('id')->on('users');
-            $table->foreignId('site_id')->references('id')->on('sites');
-
-            $table->enum('status',['ACTIVO','INACTIVO'])->default('ACTIVO');
             $table->timestamps();
 
            });

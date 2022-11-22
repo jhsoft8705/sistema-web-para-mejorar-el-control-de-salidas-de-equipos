@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@if (trim($__env->yieldContent('template_title'))) @yield('template_title') | @endif {{ config('app.name', 'Laravel') }}</title>
 
      @yield('css')
     {{-- importamos los assets imagenes locales --}}
@@ -29,14 +28,18 @@
                         <span class="fs-5 ">Gestión<span class="colorlogo  d-none d-sm-inline">Systems</span></span>
                     </a>
                     <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link px-sm-0 px-2">
-                                <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                        <li class="{{setActivo('homes.index')}} nav-item">
+                            <a href="{{route('homes.index')}}" class="nav-link px-sm-0 px-2 " title="Seleccionar home">
+                                   <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span>
                             </a>
                         </li>
-                        <li class="{{setActivo('equipos.index')}}{{setActivo('bajas.index') }}{{setActivo('equipos.create') }}">
+                        <li class="{{setActivo('equipos.index')}} {{setActivo('equipos.create') }}">
                             <a href="{{route('equipos.index')}}" class="nav-link px-sm-0 px-2 " title="Seleccionar equipos">
-                                <i class="fs-5 bi-grid"></i><span class="ms-1 d-none d-sm-inline">Equipos</span></a>
+                                <i class="fs-5 bi-grid"></i><span class="ms-1 d-none d-sm-inline">Entradas</span></a>
+                        </li>
+                        <li class="{{setActivo('bajas.index')}}">
+                            <a href="{{route('bajas.index')}}" class="nav-link px-sm-0 px-2 " title="Seleccionar equipos">
+                                <i class="fs-5 bi-grid"></i><span class="ms-1 d-none d-sm-inline">Salidas</span></a>
                         </li>
                         <li class="{{setActivo('sites.index')}}{{setActivo('sites.create')}}">
                             <a href="{{route('sites.index')}}" class="nav-link px-sm-0 px-2" title="Seleccionar estaciones">
@@ -53,9 +56,9 @@
                     </ul>
                     <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="{{asset('assets/img/perfil.png')}}" alt=" "
+                            <img src="{{asset('assets/img/perfil.png')}}" alt="{{Auth::user()->name}}"
                             width="28" height="28" class="rounded-circle">
-                            <span class="d-none d-sm-inline mx-1">JH soft</span>
+                            <span class="d-none d-sm-inline mx-1"> {{Auth::user()->name}}</span>
                         </a>
 
 
@@ -65,7 +68,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li> <a  class="dropdown-item"href="#">Cerrar Sesión</a></li>
+                            <li> <a  class="dropdown-item"href="{{route('close.destroy') }}">Cerrar Sesión</a></li>
                         </ul>
                     </div>
                 </div>
@@ -82,7 +85,7 @@
                        </div>
                 </main>
                 <footer class="row bg-light py-4 mt-auto">
-                    <div class="col ">©copyright Jh soft-Perú</div>
+                    <div class="col ">©copyright Comunicaciones KRUZRD 2022</div>
                 </footer>
             </div>
             {{-- end botones --}}

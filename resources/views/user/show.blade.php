@@ -28,6 +28,10 @@
                             <strong>Email:</strong>
                             {{ $user->email }}
                         </div>
+                        <div class="form-group">
+                            <strong>Estado:</strong>
+                            {{ $user->estado }}
+                        </div>
 
                     </div>
                 </div>

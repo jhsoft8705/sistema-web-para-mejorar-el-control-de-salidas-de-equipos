@@ -15,10 +15,10 @@ class DetalleSalidas extends Migration
     {
         Schema::create('detalle_salidas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('salida_id')->references('id')->on('salidas');
-            $table->foreignId('equipo_id')->references('id')->on('equipos'); 
-            $table->string('nombre');
-            $table->string('estado')->nullable();
+            $table->foreignId('entrada_id')->references('id')->on('salidas');
+            $table->foreignId('equipo_id')->references('id')->on('equipos');
+            $table->foreignId('site_id')->references('id')->on('sites');
+             $table->integer('cantidad')->nullable();
             $table->timestamps();
 
            });

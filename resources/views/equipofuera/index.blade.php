@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('template_title')
-    Equipos
+    Salidas
 @endsection
 @section('contenedorsiderbar')
 <div class="btn-group m-0 " data-toggle="buttons">
@@ -19,12 +19,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('EQUIPOS FUERA DE ALMACEN') }}
+                                {{ __('SALIDA DE EQUIPOS-FUERA DE ALMACEN') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{route('equipos.index')}}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Equipos en almacen') }}
+                                  {{ __('Entrada de equipos') }}
                                 </a>
                               </div>
                         </div>
@@ -37,7 +37,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table  id="example"  class="display table table-striped table-hover">
+                            <table  id=""  class="display table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
                                         <th>N°</th>

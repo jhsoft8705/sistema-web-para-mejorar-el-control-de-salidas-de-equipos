@@ -17,6 +17,7 @@ class DetalleEntradas extends Migration
             $table->id();
             $table->foreignId('entrada_id')->references('id')->on('entradas');
             $table->foreignId('equipo_id')->references('id')->on('equipos');
+            $table->foreignId('site_id')->references('id')->on('sites');
             $table->integer('cantidad');
             $table->timestamps();
 

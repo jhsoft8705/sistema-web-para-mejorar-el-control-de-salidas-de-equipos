@@ -44,15 +44,20 @@ class EntradaController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+        public function store(Request $request)
+        {
         request()->validate(Entrada::$rules);
-
         $entrada = Entrada::create($request->all());
 
+        //tabla detalles
+        foreach($request->equipos_id as $key=>$items){
+        $resultados[]=array("equipo_id" => $request->equipo_id[$key],
+        "cantidad" => $request->cantidad[$key]);
+        }
+        //end tabla detalles
         return redirect()->route('entradas.index')
-            ->with('success', 'Entrada created successfully.');
-    }
+        ->with('success', 'Entrada created successfully.');
+        }
 
     /**
      * Display the specified resource.

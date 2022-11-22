@@ -5,7 +5,7 @@
 @endsection
 @section('contenedorsiderbar')
 <div class="btn-group m-0 " data-toggle="buttons">
-    <a href="{{ route('equipos.create')}}" class="btn btn-secondary mr-2 "><i class="bi bi-folder-plus"></i> Agregar equipos</a>
+    <a href="{{ route('equipos.create')}}" class="btn btn-secondary mr-2 "><i class="bi bi-folder-plus"></i> Agregar Entrada</a>
      <a href="#" class="btn btn-warning"><i class="bi bi-file-earmark-spreadsheet"></i> Imprimir reportes</a>
  </div>
 @endsection
@@ -18,16 +18,13 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('EQUIPOS EN ALMACEN ') }}
+                                {{ __('ENTRADA DE EQUIPOS - EN ALMACEN') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{route('bajas.index')}}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Salidad de equipos') }}
                                 </a>
-                                <a href="{{route('salidas.index')}}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                    {{ __('Salida reales') }}
-                                  </a>
                               </div>
                         </div>
                     </div>
@@ -42,7 +39,6 @@
                             <table  id="example"  class="display table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>N°</th>
 										<th>Pertenencia</th>
                                         <th>Nombre</th>
 										<th>Codigo</th>
@@ -60,7 +56,6 @@
                                         <tr>
                                             @if($equipo->estado==1)
 
-											<td>{{ $equipo->id }}</td>
 											<td>Site-{{ $equipo->site->nombre }}</td>
                                             <td>{{ $equipo->alias }}</td>
                                             <td>{{ $equipo->codigo }}</td>
@@ -97,7 +92,7 @@
                                                     <div class="modal-dialog modal-lg" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header headerRegister">
-                                                                <h5 class="modal-title" id="modal_update{{$equipo->id}}">ACTUALIZAR {{$equipo->alias}}</h5>
+                                                                <h5 class="modal-title" id="modal_update{{$equipo->id}}">Actualizar entrada de {{$equipo->alias}}</h5>
                                                                 <button type="button" class="bi-unlock btn-close-white" data-bs-dismiss="modal" aria-label="Close">
                                                                     <span aria-bs-hidden="true">&times;</span>
                                                                 </button>
@@ -136,7 +131,7 @@
                                                         <div class="modal-dialog modal-lg" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header headerRegister">
-                                                                    <h5 class="modal-title" id="modal_show{{$equipo->id}}">Detalles  {{$equipo->alias}}</h5>
+                                                                    <h5 class="modal-title" id="modal_show{{$equipo->id}}">Detalles de entrada de {{$equipo->alias}}</h5>
                                                                     <button type="button" class="bi-unlock btn-close-white" data-bs-dismiss="modal" aria-label="Close">
                                                                         <span aria-bs-hidden="true">&times;</span>
                                                                     </button>
@@ -181,7 +176,8 @@
                                                                         @method('PATCH')
                                                                          {{-- from --}}
                                                                          <div class="col-md-6">
-                                                                            <label class="form-control-label" for="listAsignacionFamiliar">SELECCIONAR OPCIÓN</label>
+                                                                            <label class="form-control-label" for="listAsignacionFamiliar">SALIDA DE EQUIPOS-SELECCIONAR OPCIÓN</label>
+
                                                                             <select name="estado" id="estado" class="form-control form-select" placeholder="seleccionar">
                                                                                 <option value="0" disabled >seleccionar</option>
                                                                             <option value="1">Mantener</option>
@@ -191,7 +187,7 @@
                                                                         </div>
                                                                          {{-- form --}}
                                                                          <div class="modal-footer">
-                                                                             <button id="btnActionForm" type="submit" class="btn btn-primary"><i class="fa fa-check-circle"></i> <span id="btnText">Actualizar</span></button>
+                                                                             <button id="btnActionForm" type="submit" class="btn btn-primary"><i class="fa fa-check-circle"></i> <span id="btnText">Aceptar</span></button>
                                                                              <a class="btn btn-danger" href="{{route('equipos.index')}}"><i class="fa fa-times-circle"></i> Cancelar</a>
                                                                             </div>
                                                                      </form>

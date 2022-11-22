@@ -16,7 +16,7 @@ class Salidas extends Migration
         Schema::create('salidas', function (Blueprint $table) {
                  $table->id();
                  $table->foreignId('consignado_id')->references('id')->on('consignados');
-                 $table->string('motivo_salida');
+                 $table->foreignId('user_id')->references('id')->on('users'); 
                  $table->string('estado');
                  $table->timestamps();
 

@@ -17,11 +17,22 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('estado');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
+        DB::connection('mysql')->table('users')->insert([
+            [
+                'name' => 'Jhon Alex',
+                'estado' => 'activo',
+                'email' => 'jhonalexvillaflores@gmail.com',
+                'password' => Hash::make('12345'),
+                'created_at' => date('Y-m-d H:m:s'),
+                'updated_at' => date('Y-m-d H:m:s'),
+            ],
+        ]);
+
     }
 
     /**

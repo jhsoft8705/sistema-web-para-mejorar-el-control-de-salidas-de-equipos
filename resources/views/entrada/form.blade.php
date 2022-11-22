@@ -53,9 +53,10 @@
         </div>
         <br>
         <div class="box-footer mt20">
-            <a class="btn btn-info float-sm-end" id="agregar" href="#"><i class="fa fa-times-circle"></i> Agregar equipo</a>
+            <a class="btn btn-info float-sm-end" id="agregar" href="#agregar"><i class="fa fa-times-circle"></i> Agregar equipo</a>
         </div>
     </div>
+
      {{-- detalle de entrada --}}
  <div class="form-group">
     <h4 class="card-title">Detalles de Entrada</h4>
